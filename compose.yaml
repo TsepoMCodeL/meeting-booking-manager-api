@@ -1,0 +1,18 @@
+services:
+  api:
+    build:
+      context: .
+    ports:
+      - "${API_PORT:-8080}:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__MeetingRooms: "Data Source=/data/meetingrooms.db;Default Timeout=30"
+      Cors__AllowedOrigins__0: "${FRONTEND_ORIGIN:-http://localhost:5173}"
+      Authentication__Authority: "${JWT_AUTHORITY:?Set JWT_AUTHORITY to your HTTPS OpenID Connect authority}"
+      Authentication__Audience: "${JWT_AUDIENCE:?Set JWT_AUDIENCE to the API's configured audience}"
+    volumes:
+      - meeting-room-data:/data
+    restart: unless-stopped
+
+volumes:
+  meeting-room-data:

@@ -1,0 +1,18 @@
+bin/
+obj/
+artifacts/
+TestResults/
+
+# Local SQLite databases
+*.db
+*.db-shm
+*.db-wal
+
+# Local environment and IDE files
+.env
+.env.*
+!.env.example
+.vs/
+.vscode/
+*.user
+*.suo

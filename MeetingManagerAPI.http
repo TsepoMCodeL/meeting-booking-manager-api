@@ -1,0 +1,18 @@
+@MeetingManagerAPI_HostAddress = http://localhost:5157
+@accessToken = replace-with-a-valid-access-token
+
+GET {{MeetingManagerAPI_HostAddress}}/api/rooms
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+
+###
+
+GET {{MeetingManagerAPI_HostAddress}}/api/rooms/1
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+
+###
+
+GET {{MeetingManagerAPI_HostAddress}}/api/bookings/1
+Authorization: Bearer {{accessToken}}
+Accept: application/json
